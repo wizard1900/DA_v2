@@ -8,7 +8,8 @@ This repository contains an updated design version of the website.
 The project was developed using a Gulp-based workflow for building and optimizing front-end assets.
 
 Build and Run
-npm install
+
+npm i
 gulp
 
 
@@ -20,8 +21,8 @@ gulp
 
 Проект разработан с использованием Gulp-сборки для обработки и оптимизации фронтенд-ресурсов.
 
-Сборка и запуск проекта
-npm install
+Сборка и запуск проекта:
+npm i
 gulp
 
 
