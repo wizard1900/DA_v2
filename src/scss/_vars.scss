@@ -1,0 +1,26 @@
+:root {
+  // base
+  --first-family: "Cormorant", Arial, sans-serif;
+  --second-family: "Inter", Arial, sans-serif;
+  --content-width: 1350px;
+  --container-offset: 25px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+  --light-color: #eee;
+  --dark-color: #000;
+  --first-color: #cf294b;
+}
+
+@supports (width: clamp(100px, 50vw, 200px)) {
+  :root {
+    --content-width: clamp(1280px, 90vw, 1600px);
+  }
+}
+
+
+@media (max-width: 1024px) {
+  :root {
+    --second-family: Arial, sans-serif;
+  }
+}

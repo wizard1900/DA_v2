@@ -1,0 +1,128 @@
+.consultation {
+  background: #181a1b;
+  /* современный темный цвет вместо #000 */
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 100px;
+}
+
+/* мягкое свечение, как в блоке "Стоимость" */
+.consultation::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 520px;
+  height: 520px;
+  background: var(--first-color);
+  opacity: 0.12;
+  filter: blur(180px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.consultation__title {
+  font-family: var(--second-family, 'Inter'), sans-serif;
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  margin-bottom: 40px;
+  color: #f3f4f6;
+  position: relative;
+  z-index: 2;
+
+  @include tablet {
+    font-size: 36px;
+  }
+}
+
+.consultation__subtitle {
+  display: block;
+  font-family: var(--second-family);
+  font-size: 23px;
+  line-height: 1.6;
+  color: #d1d5db;
+  max-width: 600px;
+  margin: 0 auto 32px;
+  position: relative;
+  z-index: 2;
+
+  @include tablet {
+    font-size: 20px;
+  }
+}
+
+/* современная большая кнопка */
+.consultation__btn {
+  display: inline-block;
+  background: var(--first-color);
+  color: #ffffff;
+  padding: 18px 46px;
+  border-radius: 12px;
+  font-family: var(--second-family);
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+  position: relative;
+  z-index: 2;
+
+  @include tablet {
+    font-size: 18px;
+    padding: 16px 42px;
+  }
+}
+
+/* Hover — мягкое свечение, более светлый фон */
+.consultation__btn:hover {
+
+  color: #f0f0f0;
+  background: color-mix(in srgb, var(--first-color) 85%, white);
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 28px rgba(255, 255, 255, 0.12),
+    0 0 22px rgba(0, 0, 0, 0.2);
+}
+
+/* Active — нажатие, кнопка "утопляется" */
+.consultation__btn:active {
+  background: color-mix(in srgb, var(--first-color) 85%, black);
+  transform: translateY(0);
+  box-shadow:
+    0 0 0 rgba(0, 0, 0, 0),
+    inset 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Focus-visible — доступность, аккуратный контур */
+.consultation__btn:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.35);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+
+
+/* адаптив */
+@media (max-width: 768px) {
+  .consultation {
+    padding: 70px 0;
+  }
+
+  .consultation__title {
+    font-size: 32px;
+  }
+
+  .consultation__btn {
+    padding: 16px 32px;
+    font-size: 17px;
+  }
+}

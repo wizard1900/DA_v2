@@ -1,0 +1,252 @@
+.comments {
+  position: relative;
+  background: #181a1b;
+  padding: 90px 0;
+  text-align: center;
+
+  @include mobile {
+    padding-bottom: 60px;
+  }
+
+  &__swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__screen {
+    width: 100%;
+    max-width: 820px;
+    border-radius: 16px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+    background: #ffffff;
+
+    @include hover {
+      filter: opacity(90%);
+    }
+
+    @include minidesk {
+      height: initial;
+    }
+  }
+
+  &__title {
+    font-family: var(--second-family, 'Inter'), sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    color: #f3f4f6;
+    margin-bottom: 50px;
+
+    @include tablet {
+      font-size: 36px;
+    }
+
+    @include mobile {
+      font-size: 28px;
+    }
+  }
+
+  &__swiper {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+
+    @include minidesk {
+      max-width: 700px;
+    }
+
+    @include tablet {
+      max-width: 580px;
+    }
+
+    @include mobile {
+      margin-bottom: 30px;
+
+    }
+  }
+
+
+  &__text {
+    font-family: var(--second-family);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+    padding: 15px;
+    padding-left: 160px;
+    padding-right: 150px;
+  }
+
+  &__btn-next,
+  &__btn-prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 46.5%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 50%;
+    width: 47px;
+    /* важно */
+    height: 47px;
+    /* важно */
+    padding: 0;
+    /* УБИРАЕМ padding */
+    cursor: pointer;
+    transition: 0.25s;
+    z-index: 10;
+
+    @include mobile {
+      width: 30px;
+      height: 30px;
+    }
+
+    & svg {
+      width: 22px;
+      height: 22px;
+      stroke: #ffffff;
+      fill: none;
+    }
+
+    @include hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    &:active {
+      background-color: #555;
+      transform: translateY(-50%) scale(0.94);
+    }
+
+    &:focus-visible {
+      outline: 3px solid rgba(255, 255, 255, 0.35);
+      outline-offset: 3px;
+    }
+
+    &:disabled {
+      cursor: default;
+      background-color: transparent;
+    }
+
+
+
+    &:disabled svg {
+      fill: rgba(255, 255, 255, 0.43)
+    }
+
+  }
+
+  &__btn-prev {
+    left: calc(50% - 550px);
+
+    @include minidesk {
+      left: calc(50% - 450px);
+    }
+
+    @include tablet {
+      left: calc(50% - 368px);
+    }
+
+    @include minitablet {
+      display: none;
+    }
+  }
+
+  &__btn-next {
+    right: calc(50% - 550px);
+
+    @include minidesk {
+      right: calc(50% - 450px);
+    }
+
+    @include tablet {
+      right: calc(50% - 368px);
+    }
+
+    @include minitablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__btn-next svg {
+    width: 23px;
+    height: 14px;
+
+    @include mobile {
+      width: 12px;
+      height: 11px;
+    }
+  }
+
+  &__btn-prev svg {
+    width: 23px;
+    height: 14px;
+
+    @include mobile {
+      width: 12px;
+      height: 11px;
+    }
+  }
+
+  &__more {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  &__more-link {
+    display: inline-block;
+    background: #ffffff;
+    color: #1f2937;
+    padding: 14px 32px;
+    border-radius: 14px;
+    font-family: var(--second-family);
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s;
+
+
+    @include tablet {
+      font-size: 16px;
+      padding: 12px 23px;
+    }
+
+    @include hover {
+      background: #efefef;
+    }
+
+    &:active {
+      background: #bfbfbf;
+    }
+
+  }
+
+}
+
+.comments .swiper-pagination {
+  margin-top: 22px !important;
+  margin-bottom: 20px;
+  position: static;
+}
+
+.comments .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  opacity: 0.25;
+  transition: 0.2s;
+
+  @include mobile {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+.comments .swiper-pagination-bullet-active {
+  opacity: 0.85;
+}

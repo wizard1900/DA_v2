@@ -1,0 +1,131 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 7;
+  background: #181a1b;
+  padding-bottom: 10px;
+
+  @media all and (-ms-high-contrast: none),
+  (-ms-high-contrast: active) {
+    display: none;
+  }
+
+  @include tablet {
+    position: absolute;
+  }
+
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* ключевой момент */
+    gap: 28px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 18px;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+
+    @include minitablet {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  &__ie {
+    display: none;
+  }
+
+
+  &__person {
+
+    font-family: "Inter", sans-serif;
+    font-size: 21px;
+    font-weight: 500;
+    /* логотип НЕ должен быть жирным */
+    letter-spacing: 0.4px;
+
+    /* увеличиваем кернинг */
+    color: rgba(255, 255, 255, 0.92);
+    /* не чистый белый → премиальность */
+    text-transform: none;
+    white-space: nowrap;
+    transition: 0.25s ease;
+
+    /* лёгкая внутренняя тень делает текст “объёмным” как логотип */
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+
+    @include tablet {
+      font-size: 19px;
+    }
+
+    @include minitablet {
+      font-size: 18px;
+    }
+
+  }
+
+  &__person:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  &__button {
+    display: block;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-family: var(--second-family);
+    font-size: 18px;
+    background: #cc435a;
+    /* чуть мягче, чем основной */
+    color: #ffffff;
+    transition: 0.25s ease;
+
+
+
+    @include tablet {
+      font-size: 13px;
+      padding: 10px 10px;
+    }
+
+
+    &:hover {
+      background: color-mix(in srgb, #cc435a 83%, white);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      background: color-mix(in srgb, #cc435a 80%, black);
+      transform: translateY(0);
+    }
+
+  }
+
+  &__phone {
+    margin-top: 2px;
+
+    min-width: 130px;
+    font-family: var(--second-family);
+    font-size: 20px;
+    font-weight: 400;
+    color: inherit;
+
+    @include tablet {
+      font-size: 17px;
+    }
+
+
+
+    @include mobile {}
+  }
+}

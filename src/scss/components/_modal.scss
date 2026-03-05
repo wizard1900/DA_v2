@@ -1,0 +1,159 @@
+.graph-modal {
+  &__container {
+   background: #fafafa;
+  border-radius: 20px;
+  padding: 40px 36px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 12px 50px rgba(0,0,0,0.35);
+  position: relative;
+
+    @include minitablet {
+      min-width: 490px;
+      width: 80%;
+    }
+
+    @include mobile {
+      min-width: 307px;
+      width: 95%;
+    }
+  }
+
+  &__title {
+  font-family: "Cormorant Garamond", serif;
+  font-family: serif;
+
+  font-size: 28px;
+  font-weight: 600;
+  color: #1e1e1e;
+  margin-bottom: 6px;
+  line-height: 1.2;
+
+    @include minitablet {
+      font-size: 30px;
+    }
+
+    @include mobile {
+      font-size: 26px;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    font-family: var(--second-family);
+     font-size: 20px;
+  color: rgba(0,0,0,0.7);
+   margin-bottom: 24px;
+
+    @include minitablet {
+      font-size: 26px;
+    }
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__form-container {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--second-family);
+  }
+
+  &__form-label {
+    display: block;
+    font-size: 19px;
+    color: #333;
+    margin-bottom: 25px;
+  }
+
+  &__form-input,
+  &__form-text {
+   width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  transition: 0.2s ease;
+  margin-top: 6px;
+
+  &:focus {
+  border-color: var(--first-color);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--first-color) 35%, white);
+  }
+}
+
+   &__form-btn {
+     margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  background: var(--first-color);
+  color: #fff;
+  border-radius: 10px;
+  font-size: 19px;
+  font-weight: 600;
+  transition: 0.25s;
+
+    &:hover {
+       background: color-mix(in srgb, var(--first-color) 85%, white);
+       color: #fff;
+    }
+
+    &:active {
+       background: color-mix(in srgb, #cc435a 80%, black) !important;
+      color: #fff !important;
+      }
+
+    &:focus-visible {
+  outline: 3px solid rgba(255, 75, 100, 0.55); /* оттенок твоего var(--first-color) */
+  outline-offset: 3px;
+  border-radius: 10px; /* обязательно, иначе outline будет квадратным */
+}
+  }
+
+  &__error {
+    position: absolute;
+    color: var(--first-color);
+    font-size: 16px;
+    bottom: 325px;
+    opacity: 0;
+  }
+
+  &__error--active {
+    opacity: 1;
+  }
+
+  &__close {
+     position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 26px;
+  height: 26px;
+  opacity: 0.75;
+  transition: 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+  transform: scale(1.05);
+  }
+
+  &:focus-visible {
+  outline: 3px solid rgba(255, 75, 100, 0.55); /* цвет в твоём стиле */
+  outline-offset: 3px;
+  border-radius: 6px; /* чтобы outline был плавным */
+  }
+
+}
+}
+.just-validate-error-label {
+  position: absolute;
+  margin-top: 5px;
+  font-size: 16px;
+
+}
+
+.graph-modal__form-btn+.just-validate-error-label {
+  bottom: 114px;
+}

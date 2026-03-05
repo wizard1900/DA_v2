@@ -1,0 +1,159 @@
+.price {
+  position: relative;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 80px;
+  padding-left: 0;
+  padding-right: 0;
+
+
+
+  @include mobile {
+    padding-bottom: 60px;
+  }
+
+
+
+
+  &__title {
+    font-family: var(--second-family);
+    font-size: 44px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: #1f2937;
+    margin-bottom: 45px;
+    padding-left: 0;
+    margin-left: 0;
+
+    & .strong {
+      color: #b91c1c;
+    }
+
+
+    @include tablet {
+      font-size: 36px;
+    }
+
+    @include mobile {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+  }
+
+  &__content {
+    max-width: 1000px;
+    /* оптимальная ширина карточки */
+    margin: 0 auto 28px;
+    /* можно 20px, если хочется легче */
+    background: #f8f8f9;
+    border-radius: 14px;
+    padding: 28px 20px;
+    margin-bottom: 28px;
+    margin-left: calc(var(--container-offset) * 5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.25s ease;
+
+    @include tablet {
+      max-width: 600px;
+      margin-left: calc(var(--container-offset) * 3);
+    }
+
+    @include minitablet {
+      margin-right: 5px;
+      margin-left: 0;
+    }
+
+    &:hover {
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    }
+
+  }
+
+  &__description {
+    margin-left: 0px;
+    padding-left: 20px;
+  }
+
+  &__type {
+    font-family: var(--second-family);
+    font-size: 29px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 18px;
+
+    @include tablet {
+      font-size: 26px;
+    }
+
+    @include mobile {
+      min-width: 0;
+      font-size: 20px;
+    }
+
+  }
+
+  &__students {
+    font-family: var(--second-family);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 22px 0 12px;
+    color: #374151;
+
+    @include minitablet {
+      font-size: 22px;
+    }
+
+    @include tablet {
+      font-size: 21px;
+    }
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 12px;
+    margin-left: 0;
+    padding-left: 20px;
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  &__list-element {
+    font-family: var(--second-family);
+    font-size: 21px;
+    line-height: 1.5;
+    color: #444;
+
+    padding-left: 14px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .price__list-element::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--first-color);
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 10px;
+  }
+
+  /* акцент на цифрах (цены) */
+
+  &__list-element strong,
+  &__list-element span {
+    color: #b91c1c;
+    font-weight: 600;
+  }
+
+}

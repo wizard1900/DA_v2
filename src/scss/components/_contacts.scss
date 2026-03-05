@@ -1,0 +1,207 @@
+.contacts {
+  position: relative;
+  padding: 110px 0;
+  color: #ffffff;
+  text-align: center;
+  background-image: url(../img/contacts1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* тёмный overlay поверх фото, чтобы текст читался */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(24, 26, 27, 0.48);
+    backdrop-filter: blur(2px);
+    z-index: 0;
+  }
+
+  /* контейнер с контентом поверх overlay */
+  &__container {
+    position: relative;
+    max-width: var(--content-width);
+    z-index: 1;
+    margin: 0 auto;
+  }
+
+
+  &__question {
+    display: block;
+    width: 50%;
+    font-family: var(--second-family);
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #d1d5db;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 40px;
+
+    @include tablet {
+      font-size: 19px;
+    }
+
+    @include minitablet {
+      width: 100%;
+    }
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  &__title {
+    width: 60%;
+    font-size: 42px;
+    font-family: var(--second-family);
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 40px;
+
+    @include minidesk {
+      font-size: 40px;
+    }
+
+    @include tablet {
+      font-size: 36px;
+      margin-bottom: 32px;
+    }
+
+    @include minitablet {
+      width: 100%;
+    }
+
+    @include mobile {
+      font-size: 28px;
+    }
+  }
+
+  &__phone,
+  &__phone a {
+    font-family: var(--second-family);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    line-height: 1.6;
+    color: #e5e7eb;
+    margin-bottom: 12px;
+    transition: 0.25s;
+
+    @include tablet {
+      font-size: 19px;
+    }
+  }
+
+  &__mail,
+  &__mail a {
+    font-family: var(--second-family);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 150%;
+    color: #e5e7eb;
+    margin-bottom: 40px;
+    transition: 0.25s;
+
+    @include tablet {
+      font-size: 19px;
+    }
+  }
+
+  &__phone a {
+    @include hover {
+      color: #f3b3b3;
+    }
+
+    &:active {
+      color: #fff;
+    }
+  }
+
+  &__mail a {
+    @include hover {
+      color: #f3b3b3;
+    }
+
+    &:active {
+      color: #fff;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 auto;
+
+    @include tablet {
+      gap: 20px;
+    }
+  }
+
+  &__phone a:active,
+  &__mail a:active {
+    color: #ccc;
+  }
+
+  &__social {
+    margin-top: 40px;
+  }
+
+  &__social-item {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin: 0 8px;
+    transition: 0.25s ease;
+
+    @include tablet {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__social-item:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateY(-2px);
+  }
+
+  /* чтобы svg центрировался идеально */
+  &__social-item svg {
+    width: 38px;
+    height: 38px;
+    display: block;
+
+    @include tablet {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  &__social-item:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+
+  /* active — утопление и убираем свечение */
+  &__social-item:active {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateY(-1px);
+    box-shadow: none;
+  }
+
+  /* доступность (focus-visible) */
+  &__social-item:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.45);
+    outline-offset: 4px;
+  }
+
+}

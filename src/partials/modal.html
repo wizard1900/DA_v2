@@ -1,0 +1,38 @@
+<div class="graph-modal">
+  <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="callback">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="graph-modal__content">
+      <form action="#" class="graph-modal__form" method="POST" enctype="multipart/form-data">
+        <h2 class="graph-modal__title">Оставьте Ваши контакты</h2>
+        <span class="graph-modal__subtitle">и в ближайшее время я свяжусь с Вами</span>
+        <div class="graph-modal__form-container">
+          <label class="graph-modal__form-label">
+            Ваше имя
+            <input type="text" name="name" class="input-reset graph-modal__form-input" data-validate-field="name"
+              placeholder="Введите Ваше имя">
+          </label>
+          <label class="graph-modal__form-label">
+            Ваш номер телефона
+            <input id="phone" type="tel" name="phone" class="input-reset graph-modal__form-input"
+              data-validate-field="phone">
+          </label>
+          <label class="graph-modal__form-label">
+            Ваш email
+            <input id="mail" type="email" name="email" class="input-reset graph-modal__form-input"
+              data-validate-field="email" class="graph-modal__form-label" placeholder="Введите Ваш e-mail">
+          </label>
+          <span class="graph-modal__error">укажите ваш телефон либо email</span>
+          <label class="graph-modal__form-label">
+            Текст сообщения
+            <textarea name="message" class="input-reset graph-modal__form-text" placeholder="Не обязательно"></textarea>
+          </label>
+          <label class="custom-checkbox graph-modal__form-label">
+            <input type="checkbox" name="agree" class="custom-checkbox__input">
+            <span class="custom-checkbox__text"> Даю согласие на отправку персональных данных</span>
+          </label>
+          <button class="btn-reset btn graph-modal__form-btn" type="submit">Записаться</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,195 @@
+.doing {
+  background-color: var(--light-color);
+  padding-top: 125px;
+  padding-bottom: 80px;
+  margin-bottom: 20px;
+
+  @include mobile {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+  &__title {
+    font-family: var(--second-family);
+    font-size: 44px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: #1f2937;
+    margin-bottom: 45px;
+
+
+    & .strong {
+      color: #b91c1c;
+    }
+
+    @include tablet {
+      font-size: 36px;
+    }
+
+    @include mobile {
+      font-size: 28px;
+    }
+  }
+
+  &__doing-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    row-gap: 60px;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+
+  &__sublist {
+    font-family: var(--second-family);
+    padding: 0 22px 18px;
+    font-size: 21px;
+    line-height: 1.5;
+    color: #374151;
+
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    padding-left: 12px;
+    position: relative;
+  }
+
+  &__item::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--first-color);
+    /* твой красный */
+    border-radius: 50%;
+    position: absolute;
+    left: -6px;
+    top: 15px;
+  }
+
+
+  &__level {
+    margin-top: 0;
+    background: #f8f8f9;
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+    transition: box-shadow .2s ease, background .2s ease;
+
+    @include minitablet {
+      padding: 14px 0;
+    }
+
+    &:hover {
+      background: #efefef;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.19);
+    }
+  }
+
+  &__level &__level-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--second-family);
+    /* оставляем Inter */
+    color: #1f2937;
+    /* современный тёмно-серый */
+    font-size: 29px;
+    /* более мягко и современно */
+    font-weight: 600;
+    text-transform: none;
+    /* убираем CAPS */
+    padding: 6px 20px;
+    padding-top: 22px;
+    /* больше воздуха */
+    background: transparent;
+    /* мягкая карточка */
+    border-radius: 12px;
+    /* современный скруглённый стиль */
+    cursor: pointer;
+
+    transition: background .2s ease, box-shadow .2s ease;
+
+    @include tablet {
+      font-size: 26px;
+    }
+
+    @include mobile {
+      font-size: 18px;
+    }
+
+    & path {
+      stroke: #6b7280;
+      stroke-width: 2;
+    }
+
+    &:hover {
+      color: #633;
+    }
+  }
+
+  &__level-icon {
+    display: block;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    transition: transform .3s ease, fill .3s ease;
+    margin-top: 3px;
+    /* SVG вниз */
+
+    @include mobile {
+      width: 32px;
+    }
+
+    & path {
+      transition: fill 1.3s, stroke 0.3s;
+    }
+
+    & ellipse {
+      fill: transparent;
+      transition: fill 0.5s;
+    }
+  }
+
+}
+
+.ac .ac-trigger::after {
+  content: none;
+}
+
+.is-active .doing__level-icon {
+  transform: rotate(45deg);
+}
+
+.ac-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease, opacity .25s ease;
+  opacity: 0;
+}
+
+.doing__level.is-active .ac-panel {
+  max-height: 2000px;
+  /* безопасный предел */
+  opacity: 1;
+}
+
+
+/* Когда элемент активен — иконка становится крестом */
+
+.doing__level.is-active .doing__level-icon path {
+  stroke: var(--first-color);
+  /* красный акцент */
+}
+
+.doing__level:focus-within {
+  outline: 3px solid rgba(185, 28, 28, 0.35);
+  outline-offset: 3px;
+  border-radius: 12px;
+}

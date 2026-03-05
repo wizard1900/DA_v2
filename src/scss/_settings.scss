@@ -1,0 +1,295 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a:focus {
+  outline: 1px solid var(--light-color);
+  outline-offset: 2px;
+}
+
+button:focus {
+  outline: 1px solid var(--light-color);
+  outline-offset: 2px;
+}
+
+
+.page {
+  height: 100%;
+  font-family: var(--first-family);
+  -webkit-text-size-adjust: 100%;
+}
+
+.page__body {
+  margin: 0;
+  min-width: 315px;
+  min-height: 100%;
+  font-size: 16px;
+  color: var(--light-color);
+  background-color: var(--light-color);
+
+  @media all and (-ms-high-contrast: none),
+  (-ms-high-contrast: active) {
+    padding: 10px;
+  }
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  transition: .3s color ease-in-out;
+}
+
+input {
+  padding-left: 8px;
+  padding-right: 8px;
+  outline: none;
+
+  &:focus {
+    outline: 2px solid var(--first-color);
+  }
+}
+
+textarea {
+  padding: 8px;
+  outline: none;
+
+  &:focus {
+    outline: 2px solid var(--first-color);
+  }
+}
+
+.site-container {
+  overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+}
+
+.is-hidden {
+  display: none !important;
+  /* stylelint-disable-line declaration-no-important */
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn {
+  border: 1px solid var(--first-color);
+  border-radius: 4px;
+  transition: background-color .3s ease-in-out,
+    color .3s ease-in-out;
+
+
+  @include hover {
+    background-color: var(--light-color);
+    color: var(--first-color);
+  }
+}
+
+.btn:active {
+  background-color: var(--first-color);
+  color: var(--light-color);
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+
+  @include tablet {
+    padding: 0 20px;
+
+  }
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.centered {
+  text-align: center;
+}
+
+.dis-scroll {
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  overscroll-behavior: none;
+}
+
+.page--ios .dis-scroll {
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-checkbox {
+  &__input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__text {
+    position: relative;
+    display: inline-block;
+    padding-left: 27px;
+    font-size: 19px;
+    line-height: 150%;
+    margin-bottom: 10px;
+  }
+
+  &__text::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 4px;
+    display: inline-block;
+    border: 1px solid #222;
+    border-radius: 3px;
+    width: 20px;
+    height: 20px;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  &__text::after {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 4px;
+    width: 19px;
+    height: 19px;
+    background-image: url("../img/check.svg");
+    background-position: center;
+    background-size: 10px 8px;
+    background-repeat: no-repeat;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &__input:checked+&__text::before {
+    background-color: var(--first-color);
+  }
+
+  &__input:checked+&__text::after {
+    opacity: 1;
+  }
+
+  &__input:focus+&__text {
+    // outline: 2px solid var(--first-color);
+
+  border: 1px solid #ddd;
+     border-color: var(--first-color);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--first-color) 35%, white);
+
+  }
+}
+
+.custom-radio {
+  &__input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__text {
+    position: relative;
+    display: inline-block;
+    padding-left: 27px;
+    font-size: 19px;
+    line-height: 160%;
+    color: #999;
+  }
+
+  &__text::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 4px;
+    display: inline-block;
+    border: 1px solid #b3b7bc;
+    border-radius: 100%;
+    width: 16px;
+    height: 16px;
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  &__text::after {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    background-image: url("../img/check-circle.svg");
+    background-position: center;
+    background-size: 8px 8px;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &__input:checked+&__text::before {
+    border-color: var(--first-color);
+  }
+
+  &__input:checked+&__text::after {
+    opacity: 1;
+  }
+
+  &__input:focus+&__text {
+    outline: 3px solid var(--first-color);
+  }
+}
