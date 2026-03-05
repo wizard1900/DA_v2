@@ -9,7 +9,9 @@ The project was developed using a Gulp-based workflow for building and optimizin
 
 Build and Run
 
+
 npm i
+
 gulp
 
 
@@ -22,7 +24,10 @@ gulp
 Проект разработан с использованием Gulp-сборки для обработки и оптимизации фронтенд-ресурсов.
 
 Сборка и запуск проекта:
+
+
 npm i
+
 gulp
 
 
